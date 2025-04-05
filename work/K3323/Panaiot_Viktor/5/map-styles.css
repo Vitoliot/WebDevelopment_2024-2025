@@ -1,0 +1,9 @@
+/* map-styles.css */
+
+area:hover {
+  cursor: pointer;
+}
+
+area {
+  outline: none;
+}

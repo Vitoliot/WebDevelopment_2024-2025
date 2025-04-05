@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Карта Мира Программирования</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS (CDN) -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <!-- Подключаем наши дополнительные стили -->
+  <link href="map-styles.css" rel="stylesheet">
+</head>
+<body class="bg-white text-black">
+
+  <!-- Навигация -->
+  <nav class="navbar navbar-light bg-light px-3">
+    <a class="navbar-brand d-flex align-items-center">
+      <!-- Иконка из Bootstrap Icons -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+           fill="currentColor" class="bi bi-globe me-2" viewBox="0 0 16 16">
+        <path d="..."/>
+      </svg>
+      <span>Lab 5</span>
+    </a>
+    <ul class="navbar-nav flex-row">
+      <li class="nav-item mx-2">
+        <a class="nav-link" href="https://github.com/Vitoliot">Контакты</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container py-4">
+    <div id="page_text" class="text-center mb-4">
+      <h1 class="display-4 fw-semibold" style="font-size: 32px;">
+        Карта Мира Программирования
+      </h1>
+      <h2 class="fs-2" style="font-weight: 500">
+        Выберите область и начните исследовать
+      </h2>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <!-- Изображение с указанием usemap для подключения карты -->
+      <img
+              src="images/map_base.webp"
+              alt="Карта Мира Программирования"
+              usemap="#programming-map"
+              width="1392" height="1050"
+              class="img-fluid border border-dark"
+      >
+    </div>
+
+    <map name="programming-map">
+      <area shape="rect" coords="100,250,150,350"
+        alt="Frontend" data-bs-toggle="tooltip" title="Frontend Programming"
+        onmouseover="hoverGear();"
+        onmouseout="unhoverGear();"
+      >
+
+      <area shape="circle" coords="400,350,62"
+        href="https://route256.ozon.ru/go-developer-junior"
+        alt="Backend" data-bs-toggle="tooltip" title="Backend Development"
+        onmouseover="this.style.transition='0.5s'; this.style.backgroundColor='#CED4DA';"
+        onmouseout="this.style.backgroundColor='transparent';"
+      >
+
+      <area shape="rect" coords="600, 250, 800, 350"
+        alt="Database" data-bs-toggle="tooltip" title="Database"
+        onclick="alert('Error 42501 or Permission Denied');"
+      >
+
+      <area shape="circle"
+      coords="932,300,80"
+        href="images/devops_meme.png" alt="Devops" title="Devops"
+        onclick="blinkArea(this);"
+      >
+
+      <area shape="rect" coords="1300, 250, 800, 1400"
+        alt="Mobile App" data-bs-toggle="modal" data-bs-target="#mobileModal"
+            title="Mobile App"
+      >
+    </map>
+
+    <!-- Модальное окно для области mobile -->
+    <div class="modal fade" id="mobileModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-white text-black">
+          <div class="modal-header">
+            <h5 class="modal-title">Mobile dev app</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Вы можете приступить к <a href="https://skillbox.ru/media/code/kto_takoy_mobilnyy_razrabotchik_i_kak_im_stat/"> мобильной разработке</a> прямо сейчас!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-outline-dark" data-bs-dismiss="modal">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS для модальных окон, тултипов и т.д. -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Подключаем наш скрипт для эффектов -->
+  <script src="index.js"></script>
+</body>
+</html>
