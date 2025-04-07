@@ -7,3 +7,12 @@ area:hover {
 area {
   outline: none;
 }
+
+.toggle-image {
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  width: 400px;
+  z-index: 999;
+}
