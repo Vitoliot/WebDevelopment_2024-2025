@@ -1,0 +1,7 @@
+area:hover {
+  cursor: pointer;
+}
+
+area {
+  outline: none;
+}

@@ -1,0 +1,77 @@
+{% extends 'mainapp/base.html' %}
+{% block title %}О разработке{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">О разработке</h2>
+
+<div class="card shadow-sm mb-4 border-0">
+  <div class="card-body">
+    <h5 class="card-title mb-2">Общий замысел проекта</h5>
+    <p class="card-text text-muted" style="font-size: 15px;">
+      Данный проект создан для демонстрации минималистичного дизайна с использованием
+      фреймворка Django на backend и Bootstrap на frontend. Мы постарались сочетать
+      современный внешний вид, удобство навигации и адаптивную вёрстку, чтобы проект
+      выглядел актуально на любом устройстве.
+    </p>
+  </div>
+</div>
+
+<!-- Блок со стеком технологий -->
+<div class="card shadow-sm mb-4 border-0">
+  <div class="card-body">
+    <h5 class="card-title mb-2">Стек технологий</h5>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item border-0 ps-0" style="font-size: 15px;">
+        <strong>Django</strong>: Python‑фреймворк для создания веб‑приложений,
+        обеспечивающий удобную структуру и безопасность.
+      </li>
+      <li class="list-group-item border-0 ps-0" style="font-size: 15px;">
+        <strong>SQLite</strong>: Встроенная база данных для удобства разработки и
+        тестирования. При необходимости легко заменить на PostgreSQL/MySQL.
+      </li>
+      <li class="list-group-item border-0 ps-0" style="font-size: 15px;">
+        <strong>Bootstrap</strong>: CSS‑фреймворк для быстрой и адаптивной вёрстки,
+        здесь используется для оформления форм, кнопок, сетки, модалок и т. д.
+      </li>
+      <li class="list-group-item border-0 ps-0" style="font-size: 15px;">
+        <strong>JavaScript (Vanilla + Bootstrap)</strong>:
+        Используется для небольших интерактивных элементов, таких как тултипы,
+        модальные окна, а также для интерактивной карты.
+      </li>
+      <li class="list-group-item border-0 ps-0" style="font-size: 15px;">
+        <strong>GitHub</strong> (опционально): система контроля версий
+        для хранения кода и совместной разработки.
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Дополнительный блок о структуре и целях -->
+<div class="card shadow-sm mb-4 border-0">
+  <div class="card-body">
+    <h5 class="card-title mb-2">Цели и особенности структуры</h5>
+    <p class="card-text text-muted" style="font-size: 15px;">
+      Главная цель — показать, как организовать учебный проект на Django с
+      использованием шаблонов, форм и базовых CRUD‑операций (в нашем случае
+      через форму обратной связи). Проект легко расширять, например,
+      добавив авторизацию, личные кабинеты пользователей, дополнительный функционал
+      (API, веб‑сокеты и т.д.).
+    </p>
+    <p class="card-text text-muted" style="font-size: 15px;">
+      Мы применяем принцип «не усложнять там, где это не нужно», создавая
+      минималистичную структуру: одно приложение <code>mainapp</code>, базовый шаблон
+      <code>base.html</code>, несколько простых страниц и модель <code>Feedback</code>
+      для хранения отзывов. В реальных проектах можно разбить логику на несколько
+      приложений (например, <code>users</code>, <code>posts</code>, <code>comments</code>)
+      в зависимости от задач.
+    </p>
+  </div>
+</div>
+
+<!-- Завершение страницы -->
+<p class="mt-4">
+  Спасибо, что обратили внимание на наш проект! Если возникнут предложения или идеи
+  по улучшению, вы всегда можете оставить сообщение на странице
+  <a href="{% url 'contact' %}" class="text-dark fw-semibold">«Обратная связь»</a>.
+</p>
+{% endblock %}
