@@ -75,8 +75,7 @@ def main():
         try:
             while True:
                 conn, addr = server_socket.accept()
-                client_thread = threading.Thread(target=handle_client, args=(conn, addr))
-                client_thread.daemon = True
+                client_thread = threading.Thread(target=handle_client, args=(conn, addr), daemon=True)
                 client_thread.start()
         except KeyboardInterrupt:
             logging.info("Сервер остановлен вручную.")

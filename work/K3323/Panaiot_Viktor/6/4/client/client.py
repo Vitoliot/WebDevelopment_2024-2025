@@ -13,6 +13,9 @@ def receive_messages(sock):
                 logging.info("Соединение с сервером потеряно.")
                 break
             print(data.decode('utf-8').strip())
+        except WindowsError as e:
+            logging.info("Соединение разорвано")
+            break
         except Exception as e:
             logging.error("Ошибка при получении сообщения: %s", e)
             break
@@ -24,7 +27,7 @@ def main():
             client_socket.connect((HOST, PORT))
             logging.info("Подключено к серверу %s:%s", HOST, PORT)
 
-            thread = threading.Thread(target=receive_messages, args=(client_socket,), daemon=True)
+            thread = threading.Thread(target=receive_messages, args=(client_socket,))
             thread.start()
 
             while True:

@@ -55,6 +55,8 @@ def handle_client(client_socket, client_id):
                         client_socket.sendall(f"Ошибка при отправке сообщения: {e}\n".encode('utf-8'))
                 else:
                     client_socket.sendall(f"Клиент с ID {target_id} не найден.\n".encode('utf-8'))
+    except WindowsError:
+        logging.info("Соединение разорвано")
     except Exception as e:
         logging.error("Ошибка у клиента %s: %s", client_id, e)
     finally:
