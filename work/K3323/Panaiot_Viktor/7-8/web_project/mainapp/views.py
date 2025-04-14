@@ -12,12 +12,11 @@ def contact(request):
         form = FeedbackForm(request.POST)
         if form.is_valid():
             form.save()  # Сохранит в модель Feedback
-            return redirect('index')  # Или другую страницу, например "Спасибо"
+            return redirect('index')
     else:
         form = FeedbackForm()
 
     return render(request, 'mainapp/contact.html', {'form': form, 'title': 'Обратная связь'})
-
 
 def map_page(request):
     return render(request, 'mainapp/map.html')

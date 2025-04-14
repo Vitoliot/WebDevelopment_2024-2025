@@ -16,7 +16,6 @@ class Feedback(models.Model):
     email = models.EmailField("Email")
     message = models.TextField("Сообщение")
 
-    # Новые поля
     specialty = models.CharField(
         "Специальность",
         max_length=20,
